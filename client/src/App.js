@@ -1,4 +1,5 @@
 import BoardRender from './components/boardRender';
+import Menu from './components/menu';
 import './App.css';
 
 import { useState, useEffect } from 'react'
@@ -8,16 +9,20 @@ function App() {
   const [height, setHeight] = useState(20);
   const [width, setWidth] = useState(20);
   const [board, setBoard] = useState([]);
+  const [running, setRunning] = useState(false);
 
 
 
   function generateBoard() {
     const newRow = []
-    for (let x = 0; x < width; x++) {
-      newRow[x] = 0;
-    }
     const newBoard = []
     for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        newRow[x] = {
+          cellState: 0,
+          cellPosition: [y,x]
+        };
+      }
       newBoard[y] = [...newRow];
     }
     return newBoard;
@@ -25,23 +30,35 @@ function App() {
   let testBoard;
 
   testBoard = generateBoard();
-  testBoard[3][3] = 1;
-  testBoard[3][4] = 1;
-  testBoard[3][5] = 1;
+  testBoard[3][3].cellState = 1;
+  testBoard[3][4].cellState = 1;
+  testBoard[3][5].cellState = 1;
+  
   useEffect(() => {
-    setBoard(testBoard);
+    setBoard(board => testBoard);     
   }, []);
 
+  useEffect(() => {
+    if(running){
+    const alive = setInterval(life, 1000);
+    return () => clearInterval(alive);
+    }
+  }, [running]);
+
   function life() {
-    setBoard(lifeCycle(board));
+    setBoard(board => lifeCycle(board));
+    console.log("It's alive!")
   }
 
-  // setInterval(life, 500)
+function toggleRunning(){
+  setRunning(running => !running)
+}
 
 
 
   return (
     <div className="App">
+      <Menu toggleRunning={toggleRunning}/>
       <BoardRender board={board} />
     </div>
   );

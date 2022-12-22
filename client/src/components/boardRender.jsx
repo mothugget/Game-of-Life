@@ -1,9 +1,14 @@
 import Cell from "./cell"
 
-export default function BoardRender(props){
+export default function BoardRender(props) {
     return (
         <div className="board-container">
-            {props.board.map((row)=> <p className="row-container">{row.map((cell)=> <Cell cell={cell}/>)}</p>)}
+            {props.board.map(
+                (row) =>
+                    <div key={row[0].cellPosition[0]} className="row-container">{row.map(
+                        (cell) =>
+                            <Cell key={cell.cellPosition.toString()} cell={cell} />
+                    )}</div>)}
         </div>
     )
 }

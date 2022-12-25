@@ -10,13 +10,19 @@ function App() {
   const [width, setWidth] = useState(20);
   const [board, setBoard] = useState([]);
   const [running, setRunning] = useState(false);
-  
+
   function toggleCells(y, x) {
-    setBoard(board => {
-      board[y][x].cellState = 1;
-      return [...board];
-    });
-    console.log(y, x, board);
+    if (board[y][x].cellState === 0) {
+      setBoard(board => {
+        board[y][x].cellState = 1;
+        return [...board];
+      });
+    } else {
+      setBoard(board => {
+        board[y][x].cellState = 0;
+        return [...board];
+      });
+    }
   }
 
   function generateBoard() {

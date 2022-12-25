@@ -10,8 +10,14 @@ function App() {
   const [width, setWidth] = useState(20);
   const [board, setBoard] = useState([]);
   const [running, setRunning] = useState(false);
-
-
+  
+  function toggleCells(y, x) {
+    setBoard(board => {
+      board[y][x].cellState = 1;
+      return [...board];
+    });
+    console.log(y, x, board);
+  }
 
   function generateBoard() {
     const newRow = []
@@ -20,7 +26,7 @@ function App() {
       for (let x = 0; x < width; x++) {
         newRow[x] = {
           cellState: 0,
-          cellPosition: [y,x]
+          cellPosition: [y, x]
         };
       }
       newBoard[y] = [...newRow];
@@ -29,19 +35,20 @@ function App() {
   }
   let testBoard;
 
+
   testBoard = generateBoard();
   testBoard[3][3].cellState = 1;
   testBoard[3][4].cellState = 1;
   testBoard[3][5].cellState = 1;
-  
+
   useEffect(() => {
-    setBoard(board => testBoard);     
+    setBoard(board => testBoard);
   }, []);
 
   useEffect(() => {
-    if(running){
-    const alive = setInterval(life, 1000);
-    return () => clearInterval(alive);
+    if (running) {
+      const alive = setInterval(life, 1000);
+      return () => clearInterval(alive);
     }
   }, [running]);
 
@@ -50,16 +57,16 @@ function App() {
     console.log("It's alive!")
   }
 
-function toggleRunning(){
-  setRunning(running => !running)
-}
+  function toggleRunning() {
+    setRunning(running => !running)
+  }
 
 
 
   return (
     <div className="App">
-      <Menu toggleRunning={toggleRunning}/>
-      <BoardRender board={board} />
+      <Menu toggleRunning={toggleRunning} />
+      <BoardRender board={board} cellProps={{ toggleCells }} />
     </div>
   );
 }

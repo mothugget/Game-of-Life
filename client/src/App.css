@@ -1,20 +1,33 @@
 .all-cells {
+    position: relative;
     border-style: solid;
+    border-width: 1px;
     border-radius: 5px;
     height: 20px;
     width: 20px;
+    margin: 1px;
 }
 
 .cell-state-1 {
-
     border-color: rgb(0, 121, 52);
-    ;
     background-color: rgba(27, 227, 34, 0.616);
 }
 
 .cell-state-0 {
     border-color: rgba(0, 121, 52, 0);
     background-color: rgba(133, 133, 133, 0.194);
+}
+
+.cell-highlight {
+    height: 5px;
+    width: 5px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    clip-path: polygon(41% 0, 22% 1%, 11% 5%, 3% 15%, 1% 25%, 0 41%, 0 100%, 9% 72%, 14% 39%, 21% 25%, 36% 16%, 64% 11%, 100% 0);
+    background-color: rgb(255, 255, 255);
 }
 
 .menu-container {

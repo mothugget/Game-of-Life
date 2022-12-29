@@ -1,5 +1,5 @@
 export  default function Cell(props){
-    const cellClass = `cell-button-${props.cell.cellState}`
+    const cellClass = `all-cells cell-state-${props.cell.cellState}`
 
-    return <button className={cellClass} onClick={() => { props.cellProps.toggleCells(props.cell.cellPosition[0], props.cell.cellPosition[1])}}>{props.cell.cellState}</button>
+    return <button className={cellClass} onClick={() => { props.cellProps.toggleCells(props.cell.cellPosition[0], props.cell.cellPosition[1])}}></button>
 }

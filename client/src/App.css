@@ -1,3 +1,27 @@
-.cell-button-1{
-    background-color: red;
+.all-cells {
+    border-style: solid;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.cell-state-1 {
+
+    border-color: rgb(0, 121, 52);
+    ;
+    background-color: rgba(27, 227, 34, 0.616);
+}
+
+.cell-state-0 {
+    border-color: rgba(0, 121, 52, 0);
+    background-color: rgba(133, 133, 133, 0.194);
+}
+
+.menu-container {
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background-color: turquoise;
 }

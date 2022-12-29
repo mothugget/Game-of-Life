@@ -9,6 +9,7 @@ function App() {
   const [height, setHeight] = useState(20);
   const [width, setWidth] = useState(20);
   const [board, setBoard] = useState([]);
+  const [refresh, setRefresh] = useState(500)
   const [running, setRunning] = useState(false);
 
   function toggleCells(y, x) {
@@ -39,21 +40,22 @@ function App() {
     }
     return newBoard;
   }
-  let testBoard;
 
 
-  testBoard = generateBoard();
-  testBoard[3][3].cellState = 1;
-  testBoard[3][4].cellState = 1;
-  testBoard[3][5].cellState = 1;
+
+  let emptyBoard;
 
   useEffect(() => {
-    setBoard(board => testBoard);
-  }, []);
+    emptyBoard = generateBoard();
+    emptyBoard[3][3].cellState = 1;
+    emptyBoard[3][4].cellState = 1;
+    emptyBoard[3][5].cellState = 1;
+    setBoard(board => emptyBoard);
+  }, [width, height]);
 
   useEffect(() => {
     if (running) {
-      const alive = setInterval(life, 1000);
+      const alive = setInterval(life, refresh);
       return () => clearInterval(alive);
     }
   }, [running]);
@@ -71,7 +73,17 @@ function App() {
 
   return (
     <div className="App">
-      <Menu toggleRunning={toggleRunning} />
+        <Menu menuProps={
+          {
+            toggleRunning,
+            refresh,
+            setRefresh,
+            width,
+            setWidth,
+            height,
+            setHeight
+          }
+        } /> 
       <BoardRender board={board} cellProps={{ toggleCells }} />
     </div>
   );

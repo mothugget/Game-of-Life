@@ -82,7 +82,8 @@ function App() {
           width,
           setWidth,
           height,
-          setHeight
+          setHeight,
+          running
         }
       } /> 
       <BoardRender board={board} cellProps={{ toggleCells }} />

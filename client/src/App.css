@@ -104,7 +104,9 @@
         background-color: rgba(35, 125, 107, 0.505);
         box-shadow: 0px 0px 3px 2px rgba(35, 125, 107, 0.505);
     }
-
+    #life{
+        font-size: 35px;
+    }
     .forms-container {
         border-style: none;
         border-radius: 5px;
@@ -128,7 +130,8 @@
     }
 
     .run-button {
-        font-size: 30px;
+        margin-top: 10px;
+        font-size: 26px;
     }
 
     form button {

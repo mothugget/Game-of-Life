@@ -6,8 +6,8 @@ import { useState, useEffect } from 'react'
 import lifeCycle from './lifeCycle';
 
 function App() {
-  const [height, setHeight] = useState(20);
-  const [width, setWidth] = useState(20);
+  const [height, setHeight] = useState(30);
+  const [width, setWidth] = useState(30);
   const [board, setBoard] = useState([]);
   const [refresh, setRefresh] = useState(500)
   const [running, setRunning] = useState(false);

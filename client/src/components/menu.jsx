@@ -23,7 +23,8 @@ export default function Menu({ menuProps: {
 
     return (
         <div className="menu-container">
-            <button className="run-button" onClick={toggleRunning}>{running?"Running":"Run"}</button>
+            <label id="life">Life</label>
+            <button className="run-button" onClick={toggleRunning}>{running?"Stop":"Start"}</button>
             {running ?
                 '' :
                 <div className="forms-container">

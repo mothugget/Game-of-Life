@@ -73,17 +73,18 @@ function App() {
 
   return (
     <div className="App">
-        <Menu menuProps={
-          {
-            toggleRunning,
-            refresh,
-            setRefresh,
-            width,
-            setWidth,
-            height,
-            setHeight
-          }
-        } /> 
+      <div className='bg'/>
+      <Menu menuProps={
+        {
+          toggleRunning,
+          refresh,
+          setRefresh,
+          width,
+          setWidth,
+          height,
+          setHeight
+        }
+      } /> 
       <BoardRender board={board} cellProps={{ toggleCells }} />
     </div>
   );

@@ -1,85 +1,101 @@
-.App {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
+    @font-face {
+        font-family: organico;
+        src: url(/fonts/Organico.otf);
+    }
 
-.bg {
-    position: fixed;
-    z-index: 1;
-    height: 100vh;
-    width: 100vw;
-    background-image: url("/images/jungleBackground.jpeg");
+    .App {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        font-family: organico;
+    }
 
-    filter: brightness(2) blur(15px);
-}
+    .bg {
+        position: fixed;
+        z-index: 1;
+        height: 100vh;
+        width: 100vw;
+        background-image: url("/images/jungleBackground.jpeg");
 
+        filter: brightness(2) blur(15px);
+    }
 
-.row-container {
-    display: flex;
-}
+    .board-container {
+        margin: auto;
+    }
 
-.all-cells {
-    flex-shrink: 0;
-    position: relative;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    height: 20px;
-    width: 20px;
-    margin: 1px;
-}
+    .row-container {
+        display: flex;
+    }
 
-.cell-state-1 {
-    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.366);
-    z-index: 3;
-    border-color: rgb(0, 121, 52);
-    background-color: rgba(27, 227, 34, 0.616);
-}
+    .all-cells {
+        flex-shrink: 0;
+        position: relative;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
+        height: 20px;
+        width: 20px;
+        margin: 1px;
+    }
 
-.cell-state-0 {
-    position: relative;
-    z-index: 2;
-    border-color: rgba(240, 248, 255, 0);
-    background-color: rgba(240, 248, 255, 0);
-    filter: blur(1px);
-}
+    .cell-state-1 {
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.366);
+        z-index: 3;
+        border-color: rgb(0, 121, 52);
+        background-color: rgba(27, 227, 34, 0.616);
+    }
 
-.dead-cell {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height:100%;
-    width: 100%;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    border-color: rgba(0, 121, 52, 0);
-    background-color: rgba(133, 133, 133, 0.194);
-    clip-path: polygon(0 0, 100% 0, 100% 33%, 49% 31%, 100% 45%, 100% 100%, 0 100%, 0 81%, 55% 88%, 0 61%);
-}
+    .cell-state-0 {
+        position: relative;
+        z-index: 2;
+        border-color: rgba(240, 248, 255, 0);
+        background-color: rgba(240, 248, 255, 0);
+        filter: blur(1px);
+    }
 
-.cell-highlight {
-    height: 8px;
-    width: 8px;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    border-style: solid;
-    border-color: rgb(255, 255, 255);
-    clip-path: polygon(94% 0, 100% 3%, 100% 7%, 96% 13%, 25% 13%, 19% 14%, 15% 17%, 14% 19%, 14% 92%, 10% 100%, 4% 100%, 0 94%, 0 17%, 2% 6%, 8% 1%, 17% 0%);
-    background-color: rgb(255, 255, 255);
-    filter: blur(1px)
-}
+    .dead-cell {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color: rgba(0, 121, 52, 0);
+        background-color: rgba(133, 133, 133, 0.194);
+        clip-path: polygon(0 0, 100% 0, 100% 33%, 49% 31%, 100% 45%, 100% 100%, 0 100%, 0 81%, 55% 88%, 0 61%);
+    }
 
-.menu-container {
-    z-index: 5;
-    position: fixed;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    width: 150px;
-    background-color: turquoise;
-}
+    .cell-highlight {
+        height: 8px;
+        width: 8px;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        clip-path: polygon(94% 0, 100% 3%, 100% 7%, 96% 13%, 25% 13%, 19% 14%, 15% 17%, 14% 19%, 14% 92%, 10% 100%, 4% 100%, 0 94%, 0 17%, 2% 6%, 8% 1%, 17% 0%);
+        background-color: rgb(255, 255, 255);
+        filter: blur(1px)
+    }
+
+    .menu-container {
+        z-index: 5;
+        position: fixed;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 5px;
+        border-color: rgba(35, 125, 107, 0);
+        width: 150px;
+        padding: 20px;
+        background-color: rgba(35, 125, 107, 0.505);
+        box-shadow: 0px 0px 3px 2px rgba(106, 106, 106, 0.484);
+    }

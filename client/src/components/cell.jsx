@@ -4,6 +4,6 @@ export default function Cell(props) {
     return <button className={cellClass} onClick={() => {
         props.cellProps.toggleCells(props.cell.cellPosition[0], props.cell.cellPosition[1])
     }}>
-        {props.cell.cellState ?<div className="cell-highlight"></div>:<div/>}
+        {props.cell.cellState ?<div className="cell-highlight"></div>:''}
     </button>
 }

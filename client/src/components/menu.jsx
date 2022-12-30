@@ -7,33 +7,31 @@ export default function Menu({menuProps:{
     height,
     setHeight
 }}){
-    const tempRefresh= refresh;
-    const  tempWidth = width;
-    const tempHeight = height;
+
     
     function handleRefresh(event){
         event.preventDefault();
-        setRefresh( event.target[0].value);
+        setRefresh( event.target[0].value||refresh);
     }
 
     function handleDimensions(event) {
         event.preventDefault();
-        setHeight(event.target[0].value);
-        setWidth(event.target[1].value);
+        setHeight(event.target[0].value||height);
+        setWidth(event.target[1].value||width);
     }
 
     return (
         <div className="menu-container">
             <button className="run-button" onClick={toggleRunning}>Run</button>
             <form onSubmit={handleRefresh}>
-                <input type="number"  placeholder={tempRefresh}  />
+                <input type="number"  placeholder={refresh}  />
                 <button type="submit"> Set Lifecycle </button>
             </form>
             <form onSubmit={handleDimensions}>
                 <label>Height</label>
-                <input name="height" type="number" placeholder={tempHeight} />
+                <input name="height" type="number" placeholder={height} />
                 <label>Width</label>
-                <input name="width" type="number" placeholder={tempWidth} />
+                <input name="width" type="number" placeholder={width} />
                 <button type="submit"> Set Dimensions </button>
             </form>
 

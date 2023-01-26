@@ -6,8 +6,8 @@ import { useState, useEffect } from 'react'
 import lifeCycle from './lifeCycle';
 
 function App() {
-  const [height, setHeight] = useState(30);
-  const [width, setWidth] = useState(30);
+  const [height, setHeight] = useState(31);
+  const [width, setWidth] = useState(31);
   const [board, setBoard] = useState([]);
   const [refresh, setRefresh] = useState(500)
   const [running, setRunning] = useState(false);
@@ -47,9 +47,9 @@ function App() {
 
   useEffect(() => {
     emptyBoard = generateBoard();
-    emptyBoard[3][3].cellState = 1;
-    emptyBoard[3][4].cellState = 1;
-    emptyBoard[3][5].cellState = 1;
+    emptyBoard[15][14].cellState = 1;
+    emptyBoard[15][15].cellState = 1;
+    emptyBoard[15][16].cellState = 1;
     setBoard(board => emptyBoard);
   }, [width, height]);
 

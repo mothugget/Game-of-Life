@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.c337756d.css",
-    "main.js": "/static/js/main.0bbb88cd.js",
-    "static/media/jungleBackground.jpeg": "/static/media/jungleBackground.0c89d7b59a1021df9ea9.jpeg",
-    "static/media/Organico.otf": "/static/media/Organico.829e3098d423d6e5989b.otf",
-    "index.html": "/index.html",
-    "main.c337756d.css.map": "/static/css/main.c337756d.css.map",
-    "main.0bbb88cd.js.map": "/static/js/main.0bbb88cd.js.map"
+    "main.css": "/Game-of-Life/static/css/main.f9c793c1.css",
+    "main.js": "/Game-of-Life/static/js/main.0bbb88cd.js",
+    "static/media/jungleBackground.jpeg": "/Game-of-Life/static/media/jungleBackground.0c89d7b59a1021df9ea9.jpeg",
+    "static/media/Organico.otf": "/Game-of-Life/static/media/Organico.829e3098d423d6e5989b.otf",
+    "index.html": "/Game-of-Life/index.html",
+    "main.f9c793c1.css.map": "/Game-of-Life/static/css/main.f9c793c1.css.map",
+    "main.0bbb88cd.js.map": "/Game-of-Life/static/js/main.0bbb88cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.c337756d.css",
+    "static/css/main.f9c793c1.css",
     "static/js/main.0bbb88cd.js"
   ]
 }

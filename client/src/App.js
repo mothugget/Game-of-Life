@@ -62,12 +62,15 @@ function App() {
 
   function life() {
     setBoard(board => lifeCycle(board));
-    console.log("It's alive!")
   }
 
   function toggleRunning() {
     setRunning(running => !running)
   }
+
+function clearBoard() {
+  setBoard(generateBoard());
+}
 
 
 
@@ -83,7 +86,9 @@ function App() {
           setWidth,
           height,
           setHeight,
-          running
+          running,
+          clearBoard,
+          life
         }
       } /> 
       <BoardRender board={board} cellProps={{ toggleCells }} />

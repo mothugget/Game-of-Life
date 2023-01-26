@@ -6,7 +6,9 @@ export default function Menu({ menuProps: {
     setWidth,
     height,
     setHeight,
-    running
+    running,
+    clearBoard,
+    life
 } }) {
 
 
@@ -24,23 +26,29 @@ export default function Menu({ menuProps: {
     return (
         <div className="menu-container">
             <label id="life">Life</label>
-            <button className="run-button" onClick={toggleRunning}>{running?"Stop":"Start"}</button>
+            <button className="run-button" onClick={toggleRunning}>{running ? "Stop" : "Start"}</button>
             {running ?
                 '' :
-                <div className="forms-container">
-                    <form className="refresh-input" onSubmit={handleRefresh}>
-                        <label>Lifecycle</label>
-                        <input min='10' type="number" placeholder={refresh} />
-                        <button type="submit"> Set Lifecycle </button>
-                    </form>
-                    <form className="dimension-input" onSubmit={handleDimensions}>
-                        <label>Height</label>
-                        <input min='10' name="height" type="number" placeholder={height} />
-                        <label>Width</label>
-                        <input min='10' name="width" type="number" placeholder={width} />
-                        <button type="submit"> Set Dimensions </button>
-                    </form>
-                </div>}
+                <>
+                    <button className="run-button" onClick={life}>Step</button>
+                    <button className="run-button" onClick={clearBoard}>Clear</button>
+                    <div className="forms-container">
+                        <form className="refresh-input" onSubmit={handleRefresh}>
+                            <label>Lifecycle</label>
+                            <input min='1' type="number" placeholder={refresh} />
+                            <button type="submit"> Set Lifecycle </button>
+                        </form>
+                        <form className="dimension-input" onSubmit={handleDimensions}>
+                            <label>Height</label>
+                            <input min='10' name="height" type="number" placeholder={height} />
+                            <label>Width</label>
+                            <input min='10' name="width" type="number" placeholder={width} />
+                            <button type="submit"> Set Dimensions </button>
+                        </form>
+                    </div>
+                </>
+            }
         </div>
+
     )
 }

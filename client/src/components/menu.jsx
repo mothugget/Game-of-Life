@@ -30,14 +30,14 @@ export default function Menu({ menuProps: {
                 <div className="forms-container">
                     <form className="refresh-input" onSubmit={handleRefresh}>
                         <label>Lifecycle</label>
-                        <input type="number" placeholder={refresh} />
+                        <input min='10' type="number" placeholder={refresh} />
                         <button type="submit"> Set Lifecycle </button>
                     </form>
                     <form className="dimension-input" onSubmit={handleDimensions}>
                         <label>Height</label>
-                        <input name="height" type="number" placeholder={height} />
+                        <input min='10' name="height" type="number" placeholder={height} />
                         <label>Width</label>
-                        <input name="width" type="number" placeholder={width} />
+                        <input min='10' name="width" type="number" placeholder={width} />
                         <button type="submit"> Set Dimensions </button>
                     </form>
                 </div>}

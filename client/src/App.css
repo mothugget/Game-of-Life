@@ -16,6 +16,11 @@
         font-family: inherit;
     }
 
+    button:hover {
+        cursor: pointer;
+        filter: invert(15%);
+    }
+
     .bg {
         position: fixed;
         z-index: 1;
@@ -104,9 +109,11 @@
         background-color: rgba(35, 125, 107, 0.505);
         box-shadow: 0px 0px 3px 2px rgba(35, 125, 107, 0.505);
     }
-    #life{
+
+    #life {
         font-size: 35px;
     }
+
     .forms-container {
         border-style: none;
         border-radius: 5px;
